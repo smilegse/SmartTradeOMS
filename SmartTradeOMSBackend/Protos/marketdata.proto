@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option csharp_namespace = "SmartTradeOMSBackend.Protos";
+
+service MarketDataProtoService {
+  rpc SubscribeMarketData (MarketDataRequest) returns (stream MarketDataResponse);
+}
+
+service OrderProtoService {
+  rpc PlaceOrder (OrderRequest) returns (OrderResponse);
+}
+
+message MarketDataRequest {
+  string symbol = 1;
+}
+
+message MarketDataResponse {
+  string symbol = 1;
+  double price = 2;
+  string timestamp = 3;
+}
+
+message OrderRequest {
+  string symbol = 1;
+  double quantity = 2;
+  double price = 3;
+  string orderType = 4;
+}
+
+message OrderResponse {
+  string message = 1;
+}

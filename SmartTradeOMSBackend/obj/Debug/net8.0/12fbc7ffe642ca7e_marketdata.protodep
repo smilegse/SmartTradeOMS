@@ -1,0 +1,2 @@
+obj\Debug\net8.0\Protos/Marketdata.cs \
+obj\Debug\net8.0\Protos/MarketdataGrpc.cs: Protos/marketdata.proto
